@@ -10,16 +10,32 @@ import UIKit
 struct FeedImageModel {
     let description: String?
     let location: String?
-    let imageName: String?
+    let imageName: String
 }
 
 class FeedViewController: UITableViewController {
+    private let feed = FeedImageModel.prototypeFeed
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return feed.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "FeedImageCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedImageCell", for: indexPath) as! FeedImageCell
+        let model = feed[indexPath.row]
+        cell.configure(with: model)
+        return cell
+    }
+}
+
+extension FeedImageCell {
+    func configure(with model: FeedImageModel) {
+        locationLabel.text = model.location
+        locationContainer.isHidden = model.location == nil
+
+        descriptionLabel.text = model.description
+        descriptionLabel.isHidden = model.description == nil
+
+        feedImageView.image = UIImage(named: model.imageName)
     }
 }
