@@ -26,7 +26,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="550" id="ful-zF-OQk" customClass="FeedViewConrtoller">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="550" id="ful-zF-OQk" customClass="FeedImageCell" customModule="Locations_Prototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="393" height="550"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ful-zF-OQk" id="gzW-6X-oRv">
@@ -109,6 +109,12 @@ Label</string>
                                         <constraint firstItem="2th-Mb-0Io" firstAttribute="trailing" secondItem="gzW-6X-oRv" secondAttribute="trailingMargin" id="jQc-Tt-0SK"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="bP4-S6-Ll1" id="gCY-mJ-AMJ"/>
+                                    <outlet property="feedImageView" destination="gIi-Xa-CTQ" id="Doi-8c-FJg"/>
+                                    <outlet property="locationContainer" destination="l1L-cg-46c" id="cLX-pn-5fA"/>
+                                    <outlet property="locationLabel" destination="Idj-kY-bZt" id="zmD-JY-O2W"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
